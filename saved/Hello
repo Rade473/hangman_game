@@ -1,0 +1,27 @@
+--- !ruby/object:Game
+key:
+- t
+- h
+- e
+- r
+- e
+- a
+- f
+- t
+- e
+- r
+clues: []
+guess:
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+tried_letters: []
+lives: 10
+display: []
