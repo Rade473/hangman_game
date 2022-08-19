@@ -27,7 +27,9 @@ filtereddictionary.sample
 end
 
 def player_choice
-  until @guess == @key || @lives <= 0
+  display_tries(@tried_letters)
+  puts @guess.join('')
+  begin
     puts "You have #{@lives} tries left"
     userinput = gets.chomp.downcase
     return 'save' if userinput == 'save'
@@ -47,7 +49,6 @@ def compare_guess(input)
       @guess[i] = @key[i]
     end
   end
-  puts @guess.join('')
 end
 
 def try_letter(input)
@@ -55,17 +56,24 @@ def try_letter(input)
    puts "You already tried that letter"
   elsif @key.include?(input)
     @tried_letters.push(input)
-    display_tries(@tried_letters)
   else 
     @tried_letters.push(input)
     @lives += -1
-    display_tries(@tried_letters)
   end
 end
 
 def over?
-  @guess == @key || @lives <= 0
+  if @guess == @key 
+  puts @key.join('')
+  puts 'You won, thank you for playing'
+  exit
+  end
+  if @lives <= 0
+  puts 'You lost, sorry'
+  exit
+  end
 end
+
 
 def display_tries(input)
   @display = []
@@ -75,7 +83,7 @@ def display_tries(input)
     else 
       @display.push(letter.red)
     end
-    puts @display.join(' ')
   end
+  puts @display.join(' ')
 end
 end
