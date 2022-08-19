@@ -1,0 +1,27 @@
+--- !ruby/object:Game
+key:
+- i
+- "n"
+- s
+- t
+- a
+- l
+- l
+clues: []
+guess:
+- _
+- _
+- _
+- _
+- _
+- _
+- _
+tried_letters:
+- f
+- g
+- e
+lives: 7
+display:
+- "\e[31mf\e[0m"
+- "\e[31mg\e[0m"
+- "\e[31me\e[0m"
